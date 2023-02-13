@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import Hero from "./components/hero/Hero";
+import Navbar from "./components/navbar/Navbar";
+import New from "./components/new/New";
+import Posts from "./components/posts/Posts";
+
+export const Wrapper = styled.div`
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px;
+    gap: 50px;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Navbar />
+      <Wrapper>
+        <Hero />
+        <New />
+      </Wrapper>
+      <Posts />
+    </main>
   );
 }
 
